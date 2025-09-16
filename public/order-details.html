@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Male_Fashion Template">
+    <meta name="keywords" content="Male_Fashion, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Male-Fashion | Template</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+
+    <style>
+      /* --- MAIN LAYOUT & CARD STYLING (Same as before) --- */
+      .order-summary-card, .order-tracking-card, .order-items-card {
+        background: #ffffff; border: 1px solid #e1e1e1;
+        border-radius: 8px; padding: 30px; margin-bottom: 30px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      }
+      .order-summary-card h4, .order-tracking-card h4, .order-items-card h4 {
+        border-bottom: 1px solid #ddd; padding-bottom: 15px; margin-bottom: 25px;
+      }
+      
+      /* ✅ --- NEW & IMPROVED TRACKING BAR STYLES --- */
+      .tracking-bar {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        margin: 50px 0;
+      }
+      .tracking-bar .line {
+        position: absolute;
+        top: 15px;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background-color: #e9ecef;
+        z-index: 1;
+      }
+      #progress-bar {
+        position: absolute;
+        top: 15px;
+        left: 0;
+        height: 4px;
+        background-color: #1abc9c; /* A nice "success" green */
+        z-index: 2;
+        width: 0%; /* JS will control this */
+        transition: width 0.6s ease-in-out;
+      }
+      .tracking-step {
+        position: relative;
+        z-index: 3;
+        text-align: center;
+        width: 33.33%;
+      }
+      .tracking-step .icon {
+        width: 30px;
+        height: 30px;
+        background-color: #ced4da; /* Default grey */
+        border-radius: 50%;
+        margin: 0 auto 10px;
+        color: white;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.4s ease;
+        transform: scale(0.9);
+      }
+      .tracking-step .label {
+          color: #adb5bd; /* Default grey text */
+          font-weight: 500;
+          transition: all 0.4s ease;
+      }
+
+      /* INTERACTIVE STATE: This is what makes it "light up" */
+      .tracking-step.completed .icon {
+          background-color: #1abc9c;
+          transform: scale(1); /* Pop effect */
+      }
+      .tracking-step.completed .label {
+          color: #212529; /* Darker text */
+          font-weight: 600;
+      }
+
+      /* Cancelled notice and summary list styles remain the same */
+      .cancelled-notice{ /* ... */ }
+      .summary-list { /* ... */ }
+</style>
+    
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Offcanvas Menu Begin -->
+    <div class="offcanvas-menu-overlay"></div>
+    <div class="offcanvas-menu-wrapper">
+        <div class="offcanvas__option">
+            <div class="offcanvas__links">
+
+                <!-- ✅ This wrapper toggles the Sign In link -->
+                <span class="guest-link">
+                    <a href="auth.html"><i class="fa fa-user"></i> Sign In</a>
+                </span>
+                
+                <!-- ✅ This wrapper contains the logged-in user menu, hidden by default -->
+                <span class="auth-link" style="display: none;">
+                    <div id="offcanvas-user-info"></div>
+                </span>
+
+                <!-- Your existing FAQs link is untouched -->
+                <a href="faq.html">FAQs</a>
+            </div>
+            <div class="offcanvas__top__hover">
+                
+            </div>
+        </div>
+        <div class="offcanvas__nav__option">
+            <!-- Your original icons and price are preserved -->
+            <a href="#" class="search-switch"><img src="img/icon/search.png" alt=""></a>
+            <a href="wishlist.html"><img src="img/icon/heart.png" alt=""></a>
+            <a href="shopping-cart.html"><img src="img/icon/cart.png" alt=""> <span>0</span></a>
+            <div class="price">$0.00</div>
+        </div>
+        <div id="mobile-menu-wrap"></div>
+        <div class="offcanvas__text"><p>Free shipping, 30-day return or refund guarantee.</p></div>
+    </div>
+    <!-- Offcanvas Menu End -->
+
+    <!-- Header Section Begin -->
+    <header class="header">
+        <div class="header__top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-7">
+                        <div class="header__top__left"><p>Free shipping, 30-day return...</p></div>
+                    </div>
+                    <div class="col-lg-6 col-md-5">
+                        <div class="header__top__right">
+
+    <!-- GUEST VIEW -->
+    <span class="guest-link">
+        <div class="header__top__links">
+            <a href="auth.html">Sign in</a>
+        </div>
+    </span>
+    
+    <!-- AUTHENTICATED VIEW -->
+    <span class="auth-link" style="display: none;">
+        <div class="header__top__hover">
+            <span><i class="fa fa-user"></i> My Account <i class="arrow_carrot_down"></i></span>
+            <ul>
+                <li><a href="./orders.html">My Orders</a></li>
+                <li><a href="./addresses.html">My Addresses</a></li>
+                <li><a href="./settings.html">Account Settings</a></li>
+                <li><a href="#" class="logout-btn">Sign Out</a></li>
+            </ul>
+        </div>
+    </span>
+
+    <!-- YOUR ORIGINAL FAQs LINK -->
+    <div class="header__top__links">
+        <a href="faq.html">FAQs</a>
+    </div>
+
+</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container">
+           <div class="row">
+                <div class="col-lg-3 col-md-3">
+                    <div class="header__logo">
+                        <a href="./index.html"><img src="img/logo.png" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <nav class="header__menu mobile-menu">
+                         <!-- Your existing main navigation menu -->
+                         <ul>
+                            <li><a href="./index.html">Home</a></li>
+                            <li><a href="./shop.html">Shop</a></li>
+                            
+                            <li><a href="./blog.html">Blog</a></li>
+                            <li><a href="./contact.html">Contacts</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-lg-3 col-md-3">
+                    <div class="header__nav__option">
+                        <!-- Your existing icons and price are preserved -->
+                        <a href="#" class="search-switch"><img src="img/icon/search.png" alt=""></a>
+                        <a href="wishlist.html"><img src="img/icon/heart.png" alt=""></a>
+                        <a href="shopping-cart.html"><img src="img/icon/cart.png" alt=""> <span>0</span></a>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="canvas__open"><i class="fa fa-bars"></i></div>
+        </div>
+    </header>
+    <!-- Header Section End -->
+
+      <section class="order-details-section spad">
+      <div class="container">
+        <div class="section-title">
+          <h2>Order Details</h2>
+        </div>
+        <div id="order-details-container">
+          <p>Loading your order...</p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="footer__about">
+                        <div class="footer__logo">
+                            <a href="#"><img src="img/footer-logo.png" alt=""></a>
+                        </div>
+                        <p>The customer is at the heart of our unique business model, which includes design.</p>
+                        <a href="#"><img src="img/payment.png" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 offset-lg-1 col-md-3 col-sm-6">
+                    <div class="footer__widget">
+                        <h6>Shopping</h6>
+                        <ul>
+                            <li><a href="#">Clothing Store</a></li>
+                            <li><a href="#">Trending Shoes</a></li>
+                            <li><a href="#">Accessories</a></li>
+                            <li><a href="#">Sale</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-6">
+                    <div class="footer__widget">
+                        <h6>Shopping</h6>
+                        <ul>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">Payment Methods</a></li>
+                            <li><a href="#">Delivary</a></li>
+                            <li><a href="#">Return & Exchanges</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 offset-lg-1 col-md-6 col-sm-6">
+                    <div class="footer__widget">
+                        <h6>NewLetter</h6>
+                        <div class="footer__newslatter">
+                            <p>Be the first to know about new arrivals, look books, sales & promos!</p>
+                            <form action="#">
+                                <input type="text" placeholder="Your email">
+                                <button type="submit"><span class="icon_mail_alt"></span></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="footer__copyright__text">
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        <!-- <p>Copyright ©
+                            <script>
+                                document.write(new Date().getFullYear());
+                            </script>2020
+                            All rights reserved | This template is made with <i class="fa fa-heart-o"
+                            aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                        </p> -->
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Js Plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/jquery.nicescroll.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/jquery.countdown.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/mixitup.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/auth-check.js"></script>
+<!-- At the bottom of order-details.html -->
+
+<!-- At the bottom of order-details.html -->
+
+<script>
+    document.addEventListener("DOMContentLoaded", async () => {
+        const API_BASE = "http://localhost:5000";
+        const container = document.getElementById("order-details-container");
+        const token = localStorage.getItem("token");
+
+        if (!token) {
+            alert("Your session has expired. Please sign in to view your orders.");
+            window.location.href = "auth.html";
+            return;
+        }
+
+        // --- DEFINITIVE, INTERACTIVE FUNCTIONS (Defined once) ---
+
+        function updateTracker(status) {
+            const trackingCard = document.querySelector('.order-tracking-card');
+            if (!trackingCard) return;
+
+            if (status === 'Cancelled') {
+                trackingCard.innerHTML = `
+                    <h4>Order Tracking</h4>
+                    <div class="cancelled-notice">
+                        <span class="icon">❌</span>
+                        <span>This order has been cancelled.</span>
+                    </div>`;
+                return;
+            }
+            
+            const steps = { 'Processing': 0, 'Shipped': 1, 'Delivered': 2 };
+            const statusIndex = steps[status] ?? -1;
+            
+            document.querySelectorAll('.tracking-step').forEach((stepEl, index) => {
+                stepEl.classList.remove('completed');
+                if (index <= statusIndex) {
+                    stepEl.classList.add('completed');
+                }
+            });
+            
+            const progressBar = document.getElementById('progress-bar');
+            if (progressBar) {
+                const progressPercentage = statusIndex < 0 ? 0 : (statusIndex / (Object.keys(steps).length - 1)) * 100;
+                progressBar.style.width = `${progressPercentage}%`;
+            }
+        }
+
+        // --- MAIN PAGE EXECUTION ---
+        try {
+            const urlParams = new URLSearchParams(window.location.search);
+            const orderId = urlParams.get('orderId');
+            if (!orderId) throw new Error("No Order ID found in URL.");
+
+            const res = await fetch(`${API_BASE}/api/orders/${orderId}`, {
+                headers: { "Authorization": `Bearer ${token}` }
+            });
+            if (!res.ok) {
+                throw new Error(`Could not retrieve this order. Server responded with status ${res.status}.`);
+            }
+            const order = await res.json();
+
+            // ✅ --- THIS IS THE COMPLETE AND CORRECTED RENDERING LOGIC ---
+            container.innerHTML = `
+              <div class="row">
+                <!-- Main Content Column -->
+                <div class="col-lg-8">
+                    <div class="order-tracking-card">
+                        <h4>Order Tracking</h4>
+                        <div class="tracking-bar">
+                            <div id="progress-bar"></div>
+                            <div class="tracking-step"><div class="icon">✓</div><div class="label">Processing</div></div>
+                            <div class="tracking-step"><div class="icon">✓</div><div class="label">Shipped</div></div>
+                            <div class="tracking-step"><div class="icon">✓</div><div class="label">Delivered</div></div>
+                        </div>
+                    </div>
+                    <div class="order-items-card">
+                        <h4>Items in this Order</h4>
+                        <ul class="list-group list-group-flush">
+                            ${order.items.map(item => {
+                                const price = parseFloat(item.price) || 0;
+                                const quantity = parseInt(item.quantity) || 1;
+                                const total = price * quantity;
+                                return `
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    ${item.name} (x${quantity})
+                                    <span>$${total.toFixed(2)}</span>
+                                </li>`;
+                            }).join('')}
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Sidebar Summary Column -->
+                <div class="col-lg-4">
+                    <div class="order-summary-card">
+                        <h4>Order & Payment Summary</h4>
+                        <ul class="summary-list">
+                            <li><span>Order ID:</span> <strong>#${order._id}</strong></li>
+                            <li><span>Order Date:</span> <strong>${new Date(order.createdAt).toLocaleDateString()}</strong></li>
+                            <li><span>Order Status:</span> <strong id="order-status-text">${order.status}</strong></li>
+                             <hr>
+                            <li style="font-size: 20px;"><span>Total Paid:</span> <strong>$${(order.totalAmount || 0).toFixed(2)}</strong></li>
+                        </ul>
+                         ${order.status === 'Processing' ? `
+                           <div id="cancel-container" class="text-center mt-4">
+                             <button id="cancel-order-btn" class="btn btn-outline-danger">Cancel Order</button>
+                           </div>` : ''}
+                    </div>
+                </div>
+              </div>
+            `;
+            
+            // AFTER the HTML is rendered, call updateTracker to apply the status
+            updateTracker(order.status);
+            
+            // THEN, find the button and add its functionality
+            const cancelButton = document.getElementById('cancel-order-btn');
+            if (cancelButton) {
+              cancelButton.addEventListener('click', async () => {
+                if (confirm('Are you sure you want to cancel this order?')) {
+                  cancelButton.disabled = true;
+                  cancelButton.innerText = 'Cancelling...';
+                  try {
+                    const cancelRes = await fetch(`${API_BASE}/api/orders/${orderId}/cancel`, {
+                      method: 'PATCH',
+                      headers: { "Authorization": `Bearer ${token}` }
+                    });
+                    const result = await cancelRes.json();
+                    if (!cancelRes.ok) throw new Error(result.error);
+                    
+                    document.getElementById('order-status-text').innerText = 'Cancelled';
+                    updateTracker('Cancelled');
+                    document.getElementById('cancel-container').remove();
+                  } catch (err) {
+                    alert(`Cancellation failed: ${err.message}`);
+                    cancelButton.disabled = false;
+                    cancelButton.innerText = 'Cancel Order';
+                  }
+                }
+              });
+            }
+
+        } catch (err) {
+            container.innerHTML = `<p class="alert alert-danger">${err.message}</p>`;
+        }
+    });
+</script>
+</body>
+</html>

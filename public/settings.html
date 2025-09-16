@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Male_Fashion Template">
+    <meta name="keywords" content="Male_Fashion, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Male-Fashion | Template</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #111111;
+            --primary-hover: #333333;
+            --danger-color: #e53935;
+            --danger-hover: #c62828;
+            --border-color: #e9ecef;
+            --background-color: #f8f9fa;
+        }
+
+        body {
+            font-family: 'Nunito Sans', sans-serif;
+        }
+
+        .settings-section {
+            background-color: var(--background-color);
+        }
+        .settings-layout {
+            display: flex;
+            gap: 40px;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.07);
+            min-height: 650px;
+        }
+
+        /* --- Left-side Navigation --- */
+        .settings-nav {
+            flex: 0 0 240px;
+            border-right: 1px solid var(--border-color);
+            padding-right: 40px;
+        }
+        .nav-item {
+            display: flex; align-items: center; padding: 16px;
+            font-size: 16px; font-weight: 600; color: #495057;
+            cursor: pointer; border-radius: 8px; margin-bottom: 8px;
+            transition: all 0.25s ease-in-out;
+        }
+        .nav-item i {
+            width: 25px; font-size: 18px; text-align: center;
+            margin-right: 15px; color: #868e96; transition: color 0.25s ease;
+        }
+        .nav-item:hover {
+            background-color: #f1f3f5; color: var(--primary-color);
+        }
+        .nav-item.active {
+            background-color: var(--primary-color);
+            color: #fff; box-shadow: 0 4px 15px rgba(17,17,17,0.2);
+        }
+        .nav-item.active i { color: #fff; }
+
+        /* --- Right-side Content --- */
+        .settings-content { flex-grow: 1; }
+        .settings-panel { display: none; animation: fadeIn 0.5s ease-in-out; }
+        .settings-panel.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        
+        .settings-panel h4 {
+            font-weight: 700; color: #343a40; border-bottom: 1px solid var(--border-color);
+            padding-bottom: 15px; margin-bottom: 30px;
+        }
+        
+        /* -- Custom Creative & Themed Elements -- */
+        .avatar-section { display: flex; align-items: center; margin-bottom: 30px; }
+        .avatar-initials {
+            width: 70px; height: 70px; background-image: linear-gradient(45deg, #333, #111);
+            color: #fff; font-size: 28px; font-weight: bold;
+            display: flex; align-items: center; justify-content: center;
+            border-radius: 50%; margin-right: 20px;
+        }
+        .form-control {
+            border: 1px solid #ced4da; padding: 12px 15px; height: auto;
+            transition: all 0.2s ease;
+        }
+        .form-control:focus {
+            border-color: var(--primary-color); box-shadow: 0 0 0 2px rgba(17,17,17,0.1);
+        }
+        .btn-primary {
+            background-color: var(--primary-color); border-color: var(--primary-color);
+            padding: 12px 30px; font-weight: 600;
+        }
+        .btn-primary:hover {
+             background-color: var(--primary-hover); border-color: var(--primary-hover);
+        }
+        .toggle-switch input:checked + .slider { background-color: var(--primary-color); }
+
+        .danger-zone {
+            border: 2px solid var(--danger-color);
+            border-radius: 8px; padding: 25px;
+            background-color: #fffafa;
+        }
+        .danger-zone p { color: #58151c; }
+        .danger-zone button {
+            background-color: var(--danger-color); border-color: var(--danger-color);
+        }
+         .danger-zone button:hover {
+            background-color: var(--danger-hover); border-color: var(--danger-hover);
+        }
+    </style>
+    
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Offcanvas Menu Begin -->
+    <div class="offcanvas-menu-overlay"></div>
+    <div class="offcanvas-menu-wrapper">
+        <div class="offcanvas__option">
+            <div class="offcanvas__links">
+
+                <!-- ✅ This wrapper toggles the Sign In link -->
+                <span class="guest-link">
+                    <a href="auth.html"><i class="fa fa-user"></i> Sign In</a>
+                </span>
+                
+                <!-- ✅ This wrapper contains the logged-in user menu, hidden by default -->
+                <span class="auth-link" style="display: none;">
+                    <div id="offcanvas-user-info"></div>
+                </span>
+
+                <!-- Your existing FAQs link is untouched -->
+                <a href="faq.html">FAQs</a>
+            </div>
+            <div class="offcanvas__top__hover">
+                
+            </div>
+        </div>
+        <div class="offcanvas__nav__option">
+            <!-- Your original icons and price are preserved -->
+            <a href="#" class="search-switch"><img src="img/icon/search.png" alt=""></a>
+            <a href="wishlist.html"><img src="img/icon/heart.png" alt=""></a>
+            <a href="shopping-cart.html"><img src="img/icon/cart.png" alt=""> <span>0</span></a>
+            <div class="price">$0.00</div>
+        </div>
+        <div id="mobile-menu-wrap"></div>
+        <div class="offcanvas__text"><p>Free shipping, 30-day return or refund guarantee.</p></div>
+    </div>
+    <!-- Offcanvas Menu End -->
+
+    <!-- Header Section Begin -->
+    <header class="header">
+        <div class="header__top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-7">
+                        <div class="header__top__left"><p>Free shipping, 30-day return...</p></div>
+                    </div>
+                    <div class="col-lg-6 col-md-5">
+                        <div class="header__top__right">
+
+    <!-- GUEST VIEW -->
+    <span class="guest-link">
+        <div class="header__top__links">
+            <a href="auth.html">Sign in</a>
+        </div>
+    </span>
+    
+    <!-- AUTHENTICATED VIEW -->
+    <span class="auth-link" style="display: none;">
+        <div class="header__top__hover">
+            <span><i class="fa fa-user"></i> My Account <i class="arrow_carrot_down"></i></span>
+            <ul>
+                <li><a href="./orders.html">My Orders</a></li>
+                <li><a href="./addresses.html">My Addresses</a></li>
+                <li><a href="./settings.html">Account Settings</a></li>
+                <li><a href="#" class="logout-btn">Sign Out</a></li>
+            </ul>
+        </div>
+    </span>
+
+    <!-- YOUR ORIGINAL FAQs LINK -->
+    <div class="header__top__links">
+        <a href="faq.html">FAQs</a>
+    </div>
+
+</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container">
+           <div class="row">
+                <div class="col-lg-3 col-md-3">
+                    <div class="header__logo">
+                        <a href="./index.html"><img src="img/logo.png" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <nav class="header__menu mobile-menu">
+                         <!-- Your existing main navigation menu -->
+                         <ul>
+                            <li><a href="./index.html">Home</a></li>
+                            <li><a href="./shop.html">Shop</a></li>
+                            
+                            <li><a href="./blog.html">Blog</a></li>
+                            <li><a href="./contact.html">Contacts</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-lg-3 col-md-3">
+                    <div class="header__nav__option">
+                        <!-- Your existing icons and price are preserved -->
+                        <a href="#" class="search-switch"><img src="img/icon/search.png" alt=""></a>
+                        <a href="wishlist.html"><img src="img/icon/heart.png" alt=""></a>
+                        <a href="shopping-cart.html"><img src="img/icon/cart.png" alt=""> <span>0</span></a>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="canvas__open"><i class="fa fa-bars"></i></div>
+        </div>
+    </header>
+    <!-- Header Section End -->
+
+       <section class="settings-section spad">
+        <div class="container">
+            <div class="settings-layout">
+                <!-- LEFT NAVIGATION MENU -->
+                <nav class="settings-nav">
+                    <div class="nav-item active" data-target="profile-panel"><i class="fas fa-user-edit"></i> Profile</div>
+                    <div class="nav-item" data-target="security-panel"><i class="fas fa-shield-alt"></i> Security</div>
+                    <div class="nav-item" data-target="prefs-panel"><i class="fas fa-bell"></i> Preferences</div>
+                    <div class="nav-item" data-target="delete-panel"><i class="fas fa-trash-alt"></i> Delete Account</div>
+                </nav>
+
+                <!-- RIGHT CONTENT AREA -->
+                <main class="settings-content">
+                    <!-- Profile Panel -->
+                    <div id="profile-panel" class="settings-panel active">
+                        <h4>Personal Information</h4>
+                        <div class="avatar-section">
+                            <div id="avatar-placeholder" class="avatar-initials"></div>
+                            <div><h5 id="profile-name"></h5><p id="profile-email" class="text-muted"></p></div>
+                        </div>
+                        <form id="details-form">
+                            <div class="form-group"><label for="fullName">Full Name</label><input type="text" id="fullName" class="form-control" required></div>
+                            <button type="submit" class="btn btn-primary">Save Changes</button>
+                        </form>
+                    </div>
+
+                    <!-- Security Panel -->
+                    <div id="security-panel" class="settings-panel">
+                        <h4>Change Password</h4>
+                        <form id="password-form" class="mt-4">
+                            <div class="form-group"><label for="currentPassword">Current Password</label><input type="password" id="currentPassword" class="form-control" required></div>
+                            <div class="form-group"><label for="newPassword">New Password</label><input type="password" id="newPassword" class="form-control" required></div>
+                            <button type="submit" class="btn btn-primary">Update Password</button>
+                        </form>
+                        <hr class="my-5"> <!-- A visual separator -->
+
+<h4>Change Email Address</h4>
+<p class="text-muted small">A verification link will be sent to your new email address to complete the change.</p>
+<form id="email-change-form" class="mt-4">
+    <div class="form-group">
+        <label for="newEmail">New Email Address</label>
+        <input type="email" id="newEmail" class="form-control" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Request Email Change</button>
+</form>
+                    </div>
+
+                    <!-- Preferences Panel -->
+                    <div id="prefs-panel" class="settings-panel">
+        <h4>Notifications & Preferences</h4>
+        <div class="d-flex align-items-center justify-content-between p-3 border rounded mt-4">
+            <div>
+                <h6 class="mb-0">Email Newsletter</h6>
+                <p class="text-muted small mb-0">Receive promotions and updates.</p>
+            </div>
+            <label class="toggle-switch">
+                <input type="checkbox" id="newsletter">
+                <span class="slider"></span>
+            </label>
+        </div>
+    </div>
+
+                    <!-- ✅ NEW FEATURE: Delete Account Panel -->
+                    <div id="delete-panel" class="settings-panel">
+                        <h4>Delete Account</h4>
+                        <div class="danger-zone">
+                            <h6 class="font-weight-bold">Warning: This action is permanent.</h6>
+                            <p>Once you delete your account, there is no going back. All of your data, including orders and saved addresses, will be permanently removed. Please be certain.</p>
+                            <button id="delete-account-btn" class="btn btn-primary">I understand, delete my account</button>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <div id="notification-toast"></div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="footer__about">
+                        <div class="footer__logo">
+                            <a href="#"><img src="img/footer-logo.png" alt=""></a>
+                        </div>
+                        <p>The customer is at the heart of our unique business model, which includes design.</p>
+                        <a href="#"><img src="img/payment.png" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 offset-lg-1 col-md-3 col-sm-6">
+                    <div class="footer__widget">
+                        <h6>Shopping</h6>
+                        <ul>
+                            <li><a href="#">Clothing Store</a></li>
+                            <li><a href="#">Trending Shoes</a></li>
+                            <li><a href="#">Accessories</a></li>
+                            <li><a href="#">Sale</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-6">
+                    <div class="footer__widget">
+                        <h6>Shopping</h6>
+                        <ul>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">Payment Methods</a></li>
+                            <li><a href="#">Delivary</a></li>
+                            <li><a href="#">Return & Exchanges</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 offset-lg-1 col-md-6 col-sm-6">
+                    <div class="footer__widget">
+                        <h6>NewLetter</h6>
+                        <div class="footer__newslatter">
+                            <p>Be the first to know about new arrivals, look books, sales & promos!</p>
+                            <form action="#">
+                                <input type="text" placeholder="Your email">
+                                <button type="submit"><span class="icon_mail_alt"></span></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="footer__copyright__text">
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        <!-- <p>Copyright ©
+                            <script>
+                                document.write(new Date().getFullYear());
+                            </script>2020
+                            All rights reserved | This template is made with <i class="fa fa-heart-o"
+                            aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                        </p> -->
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Js Plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/jquery.nicescroll.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/jquery.countdown.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/mixitup.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/auth-check.js"></script>
+<!-- In order-details.html -->
+
+ <!-- In settings.html -->
+
+<!-- At the bottom of checkout.html -->
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+<!-- ============================================================ -->
+<!-- FINAL, GUARANTEED WORKING SCRIPT FOR CHECKOUT (WITH DEBUGGING) -->
+<!-- ============================================================ -->
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const API_BASE = "http://localhost:5000";
+        const token = localStorage.getItem("token");
+        
+        // --- Security Check: Ensure user is logged in with a valid token ---
+        if (!token) {
+            alert("Your session has expired. Please log in again.");
+            window.location.href = "auth.html";
+            return; // Stop the script immediately
+        }
+
+        // --- Reusable, Secure Headers for all API calls ---
+        const authHeaders = {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+        };
+
+        // --- Helper function for dynamic notifications ---
+        let notificationTimeout;
+        const showNotification = (message, type = 'success') => {
+            const toast = document.getElementById('notification-toast');
+            if (!toast) { alert(message); return; } // Fallback to alert
+            clearTimeout(notificationTimeout);
+            // This assumes your notification toast exists in the HTML
+            toast.textContent = message;
+            toast.className = type; // This should be 'success' or 'error' to match your CSS
+            toast.classList.add('show');
+            notificationTimeout = setTimeout(() => toast.classList.remove('show'), 4000);
+        };
+        
+        // --- Helper function to get initials for the avatar ---
+        const getInitials = (name) => {
+            if (!name) return '?';
+            const parts = name.trim().split(' ');
+            if (parts.length > 1) {
+                return parts[0][0].toUpperCase() + parts[parts.length - 1][0].toUpperCase();
+            }
+            return name[0].toUpperCase();
+        };
+
+        // --- Function to populate the page with the user's current data ---
+        function populateUI() {
+            const user = JSON.parse(localStorage.getItem("user"));
+            if (!user) return; // Safeguard if user data is missing
+
+            document.getElementById('fullName').value = user.fullName || '';
+            document.getElementById('profile-name').textContent = user.fullName || 'New User';
+            document.getElementById('profile-email').textContent = user.email;
+            
+            // ✅ AVATAR FIX: This calls the function to get initials
+            document.getElementById('avatar-placeholder').textContent = getInitials(user.fullName);
+
+            const newsletterCheckbox = document.getElementById('newsletter');
+            if (newsletterCheckbox) {
+                newsletterCheckbox.checked = user.newsletterSubscribed !== false;
+            }
+        }
+        
+        // --- Universal function to handle API requests and user feedback ---
+        async function handleFormSubmit(form, endpoint, body, { method = 'PATCH', successMessage }) {
+            const button = form.querySelector('button');
+            const originalButtonText = button.textContent;
+            button.disabled = true; button.textContent = 'Saving...';
+            
+            try {
+                const res = await fetch(`${API_BASE}${endpoint}`, {
+                    method: method,
+                    headers: authHeaders,
+                    body: JSON.stringify(body)
+                });
+                const data = await res.json();
+
+                if (!res.ok) throw new Error(data.error || 'An unknown error occurred.');
+
+                // If the server sends back updated user data, update localStorage
+                if (data.user) {
+                    localStorage.setItem('user', JSON.stringify(data.user));
+                    populateUI(); // Refresh the UI with new data
+                }
+
+                showNotification(successMessage || data.message, 'success');
+
+                // If changing password, force re-login for security
+                if (endpoint.includes('change-password')) {
+                    setTimeout(() => {
+                        localStorage.clear();
+                        window.location.href = 'auth.html';
+                    }, 2000);
+                }
+                
+            } catch (error) {
+                showNotification(error.message, 'error');
+            } finally {
+                button.disabled = false;
+                button.textContent = originalButtonText;
+            }
+        }
+        
+        // --- Navigation Logic for Sidebar Tabs ---
+        const navItems = document.querySelectorAll('.nav-item');
+        const panels = document.querySelectorAll('.settings-panel');
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                navItems.forEach(nav => nav.classList.remove('active'));
+                item.classList.add('active');
+                
+                panels.forEach(panel => panel.classList.remove('active'));
+                const targetPanel = document.getElementById(item.dataset.target);
+                if (targetPanel) targetPanel.classList.add('active');
+            });
+        });
+        
+        // --- ATTACH EVENT LISTENERS TO FORMS ---
+        document.getElementById('details-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const body = { fullName: e.target.elements.fullName.value };
+            handleFormSubmit(e.target, '/api/user/update-details', body, { successMessage: 'Profile details updated!' });
+        });
+
+        document.getElementById('password-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const body = {
+                currentPassword: e.target.elements.currentPassword.value,
+                newPassword: e.target.elements.newPassword.value
+            };
+            handleFormSubmit(e.target, '/api/user/change-password', body, { successMessage: 'Password changed successfully! Please log in again.' });
+        });
+
+        document.getElementById('email-change-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const body = { newEmail: e.target.elements.newEmail.value };
+            handleFormSubmit(e.target, '/api/user/request-email-change', body, { method: 'POST', successMessage: 'Verification email sent!' });
+            e.target.reset(); // Clear form after request
+        });
+        
+        document.getElementById('newsletter').addEventListener('change', (e) => {
+             fetch(`${API_BASE}/api/user/update-details`, {
+                method: 'PATCH',
+                headers: authHeaders,
+                body: JSON.stringify({ newsletterSubscribed: e.target.checked })
+            }).then(res => res.json()).then(data => {
+                if(data.user) localStorage.setItem('user', JSON.stringify(data.user));
+            });
+        });
+        
+        // --- Initial call to populate the page ---
+        populateUI();
+    });
+</script>
+</body>
+</html>

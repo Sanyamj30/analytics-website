@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Male_Fashion Template">
+    <meta name="keywords" content="Male_Fashion, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Male-Fashion | Template</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+ 
+   
+        <style>
+    body { font-family: 'Nunito Sans', sans-serif; background-color: #f3f3f3; }
+    
+    .auth-container-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 80px 15px; /* Add horizontal padding for smaller screens */
+    }
+    .auth-card {
+        width: 100%;
+        max-width: 480px;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        overflow: hidden;
+    }
+
+    /* --- TABS --- */
+    .auth-tabs { display: flex; background-color: #f8f9fa; }
+    .auth-tab-link {
+        flex: 1; padding: 18px; text-align: center;
+        font-weight: 600; color: #6c757d; cursor: pointer;
+        border-bottom: 3px solid transparent; transition: all 0.3s ease;
+    }
+    .auth-tab-link.active { color: #111; border-bottom-color: #111; }
+    
+    /* --- FORM PANELS --- */
+    .auth-form-panel { padding: 40px; display: none; animation: fadeIn 0.4s; }
+    .auth-form-panel.active { display: block; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+    .form-control {
+        border: 1px solid #e1e1e1; padding: 12px 15px; height: 50px;
+        margin-bottom: 20px; transition: all 0.2s ease;
+    }
+    .form-control:focus { border-color: #111; box-shadow: none; }
+    
+    .btn-submit {
+        background: #111; color: #fff; font-weight: 600; text-transform: uppercase;
+        letter-spacing: 2px; padding: 12px; width: 100%; border: none;
+        transition: background-color 0.3s;
+    }
+    .btn-submit:hover {
+        background: #333; /* A nice hover effect for the button */
+    }
+
+    /* ✅ FIXED & IMPROVED: Correctly target the link and its hover state */
+    .forgot-password-link {
+        display: block; 
+        text-align: right; 
+        margin-top: -15px; /* Adjust spacing */
+        margin-bottom: 25px;
+        font-size: 14px; 
+        color: #555; /* Use a more subtle color */
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+    
+    .forgot-password-link:hover {
+        color: #e53637; /* Match your template's primary red for hover */
+        text-decoration: underline !important; /* !important is okay for a simple text-decoration override */
+    }
+</style>
+    
+</head>
+<!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Offcanvas Menu Begin -->
+    <div class="offcanvas-menu-overlay"></div>
+    <div class="offcanvas-menu-wrapper">
+        <div class="offcanvas__option">
+            <div class="offcanvas__links">
+
+                <!-- ✅ This wrapper toggles the Sign In link -->
+                <span class="guest-link">
+                    <a href="auth.html"><i class="fa fa-user"></i> Sign In</a>
+                </span>
+                
+                <!-- ✅ This wrapper contains the logged-in user menu, hidden by default -->
+                <span class="auth-link" style="display: none;">
+                    <div id="offcanvas-user-info"></div>
+                </span>
+
+                <!-- Your existing FAQs link is untouched -->
+                <a href="faq.html">FAQs</a>
+            </div>
+            <div class="offcanvas__top__hover">
+                
+            </div>
+        </div>
+        <div class="offcanvas__nav__option">
+            <!-- Your original icons and price are preserved -->
+            <a href="#" class="search-switch"><img src="img/icon/search.png" alt=""></a>
+            <a href="wishlist.html"><img src="img/icon/heart.png" alt=""></a>
+            <a href="shopping-cart.html"><img src="img/icon/cart.png" alt=""> <span>0</span></a>
+            <div class="price">$0.00</div>
+        </div>
+        <div id="mobile-menu-wrap"></div>
+        <div class="offcanvas__text"><p>Free shipping, 30-day return or refund guarantee.</p></div>
+    </div>
+    <!-- Offcanvas Menu End -->
+
+    <!-- Header Section Begin -->
+    <header class="header">
+        <div class="header__top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-7">
+                        <div class="header__top__left"><p>Free shipping, 30-day return...</p></div>
+                    </div>
+                    <div class="col-lg-6 col-md-5">
+                        <div class="header__top__right">
+
+    <!-- GUEST VIEW -->
+    <span class="guest-link">
+        <div class="header__top__links">
+            <a href="auth.html">Sign in</a>
+        </div>
+    </span>
+    
+    <!-- AUTHENTICATED VIEW -->
+    <span class="auth-link" style="display: none;">
+        <div class="header__top__hover">
+            <span><i class="fa fa-user"></i> My Account <i class="arrow_carrot_down"></i></span>
+            <ul>
+                <li><a href="./orders.html">My Orders</a></li>
+                <li><a href="./addresses.html">My Addresses</a></li>
+                <li><a href="./settings.html">Account Settings</a></li>
+                <li><a href="#" class="logout-btn">Sign Out</a></li>
+            </ul>
+        </div>
+    </span>
+
+    <!-- YOUR ORIGINAL FAQs LINK -->
+    <div class="header__top__links">
+        <a href="faq.html">FAQs</a>
+    </div>
+
+</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container">
+           <div class="row">
+                <div class="col-lg-3 col-md-3">
+                    <div class="header__logo">
+                        <a href="./index.html"><img src="img/logo.png" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <nav class="header__menu mobile-menu">
+                         <!-- Your existing main navigation menu -->
+                         <ul>
+                            <li><a href="./index.html">Home</a></li>
+                            <li><a href="./shop.html">Shop</a></li>
+                            
+                            <li><a href="./blog.html">Blog</a></li>
+                            <li><a href="./contact.html">Contacts</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-lg-3 col-md-3">
+                    <div class="header__nav__option">
+                        <!-- Your existing icons and price are preserved -->
+                        <a href="#" class="search-switch"><img src="img/icon/search.png" alt=""></a>
+                        <a href="wishlist.html"><img src="img/icon/heart.png" alt=""></a>
+                        <a href="shopping-cart.html"><img src="img/icon/cart.png" alt=""> <span>0</span></a>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="canvas__open"><i class="fa fa-bars"></i></div>
+        </div>
+    </header>
+    <!-- Header Section End -->
+
+  <div class="auth-container-wrapper">
+        <div class="auth-card">
+            <!-- Tabs for Sign In / Sign Up -->
+            <div class="auth-tabs">
+                <div class="auth-tab-link active" data-target="signin-panel">Sign In</div>
+                <div class="auth-tab-link" data-target="signup-panel">Sign Up</div>
+            </div>
+
+            <!-- Sign In Form Panel -->
+            <div id="signin-panel" class="auth-form-panel active">
+                <form id="signin-form">
+                    <input type="email" id="signin-email" class="form-control" placeholder="Email" required>
+                    <input type="password" id="signin-password" class="form-control" placeholder="Password" required>
+                    <!-- ✅ This now correctly links to the standalone forgot-password page -->
+                    <a href="forgot-password.html" class="forgot-password-link">Forgot Password?</a>
+                    <button type="submit" class="btn-submit">Sign In</button>
+                </form>
+            </div>
+            
+            <!-- Sign Up Form Panel -->
+            <div id="signup-panel" class="auth-form-panel">
+                <form id="signup-form">
+                    <input type="text" id="signup-name" class="form-control" placeholder="Full Name" required>
+                    <input type="email" id="signup-email" class="form-control" placeholder="Email" required>
+                    <input type="password" id="signup-password" class="form-control" placeholder="Password (min. 6 characters)" required>
+                    <button type="submit" class="btn-submit">Create Account</button>
+                </form>
+            </div>
+            
+            <!-- Universal response message container -->
+            <div id="response-message" class="p-4 pt-0"></div>
+        </div>
+    </div>
+
+
+
+
+  <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="footer__about">
+                        <div class="footer__logo">
+                            <a href="#"><img src="img/footer-logo.png" alt=""></a>
+                        </div>
+                        <p>The customer is at the heart of our unique business model, which includes design.</p>
+                        <a href="#"><img src="img/payment.png" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 offset-lg-1 col-md-3 col-sm-6">
+                    <div class="footer__widget">
+                        <h6>Shopping</h6>
+                        <ul>
+                            <li><a href="#">Clothing Store</a></li>
+                            <li><a href="#">Trending Shoes</a></li>
+                            <li><a href="#">Accessories</a></li>
+                            <li><a href="#">Sale</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-6">
+                    <div class="footer__widget">
+                        <h6>Shopping</h6>
+                        <ul>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">Payment Methods</a></li>
+                            <li><a href="#">Delivary</a></li>
+                            <li><a href="#">Return & Exchanges</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 offset-lg-1 col-md-6 col-sm-6">
+                    <div class="footer__widget">
+                        <h6>NewLetter</h6>
+                        <div class="footer__newslatter">
+                            <p>Be the first to know about new arrivals, look books, sales & promos!</p>
+                            <form action="#">
+                                <input type="text" placeholder="Your email">
+                                <button type="submit"><span class="icon_mail_alt"></span></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="footer__copyright__text">
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        <!-- <p>Copyright ©
+                            <script>
+                                document.write(new Date().getFullYear());
+                            </script>2020
+                            All rights reserved | This template is made with <i class="fa fa-heart-o"
+                                aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                        </p> -->
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+<!-- Js Plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/jquery.nicescroll.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/jquery.countdown.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/mixitup.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/auth-check.js"></script>
+  <!-- At the bottom of auth.html -->
+<!-- ... other plugins ... -->
+<script src="js/main.js"></script>
+ <script src="js/auth-check.js"></script>
+<!-- ✅ SINGLE, CONSOLIDATED SCRIPT for all authentication logic -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const API_BASE = "http://localhost:5000";
+        
+        // --- Get all necessary elements once for efficiency ---
+        const tabs = document.querySelectorAll('.auth-tab-link');
+        const panels = document.querySelectorAll('.auth-form-panel');
+        const messageDiv = document.getElementById('response-message');
+        const signinForm = document.getElementById('signin-form');
+        const signupForm = document.getElementById('signup-form');
+        
+        // --- Tab switching logic ---
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => t.classList.remove('active'));
+                panels.forEach(p => p.classList.remove('active'));
+                tab.classList.add('active');
+                document.getElementById(tab.dataset.target)?.classList.add('active');
+                messageDiv.innerHTML = ''; // Clear any error messages when switching tabs
+            });
+        });
+
+        /**
+         * ✅ ADDED: A single, reusable function to handle both Sign In and Sign Up.
+         * This reduces code duplication and centralizes the logic.
+         * @param {HTMLFormElement} form - The form that was submitted.
+         * @param {string} endpoint - The API endpoint to send the request to.
+         * @param {object} body - The data to send in the request body.
+         */
+        const handleAuthRequest = async (form, endpoint, body) => {
+            const button = form.querySelector('.btn-submit');
+            const originalButtonText = button.textContent;
+            
+            // Provide user feedback by disabling the button and showing a loading state
+            button.disabled = true;
+            button.textContent = 'Processing...';
+            messageDiv.innerHTML = ''; // Clear previous messages
+
+            try {
+                const res = await fetch(`${API_BASE}${endpoint}`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(body)
+                });
+                const data = await res.json();
+
+                if (res.ok) {
+                    // SUCCESS: Save the user and token, then redirect.
+                    localStorage.setItem('user', JSON.stringify(data.user));
+                    localStorage.setItem('token', data.token); // Critical for staying logged in
+                    window.location.href = 'index.html';
+                } else {
+                    // FAILURE: Show the error message from the server.
+                    messageDiv.innerHTML = `<p class="alert alert-danger">${data.error || 'An unknown error occurred.'}</p>`;
+                    button.disabled = false; // Re-enable button on failure
+                    button.textContent = originalButtonText;
+                }
+            } catch (error) {
+                // Catastrophic failure (e.g., server is offline)
+                messageDiv.innerHTML = `<p class="alert alert-danger">Unable to connect to the server. Please try again later.</p>`;
+                button.disabled = false; // Re-enable button on failure
+                button.textContent = originalButtonText;
+            }
+        };
+
+        // --- Event Listeners (now much cleaner) ---
+
+        // Sign In event listener
+        signinForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const body = {
+                email: e.target.elements['signin-email'].value,
+                password: e.target.elements['signin-password'].value,
+            };
+            handleAuthRequest(e.target, '/api/auth/signin', body);
+        });
+
+        // Sign Up event listener
+        signupForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const body = {
+                fullName: e.target.elements['signup-name'].value,
+                email: e.target.elements['signup-email'].value,
+                password: e.target.elements['signup-password'].value,
+            };
+            // On successful signup, the backend also returns a user/token,
+            // so we can use the same handler to log them in immediately.
+            handleAuthRequest(e.target, '/api/auth/signup', body);
+        });
+    });
+</script>
+</body>
+</html>
